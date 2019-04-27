@@ -99,10 +99,9 @@ spec:
     stage("Stop Test Container") {
       echo "------------------------------------Stopping------------------------------------"
       testcont.stop()
-      //echo "${version}"
-      sh "echo ${lastversion}"
+      //sh "echo ${lastversion}"
 
-      //sh "docker rmi ${lastversion}"
+      sh "docker rmi ${lastversion}"
       //dockerimage.remove("amitde7896/studentregister:" + (${env.BUILD_NUMBER} - 1))
       //image.remove()
     }
