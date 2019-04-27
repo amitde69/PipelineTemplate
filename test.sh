@@ -1,8 +1,10 @@
 #!/bin/bash
 
-test=$(curl 10.0.0.91:2000/amit | grep "success")
+text="success"
 
-if [[ $test == *"Amit de"* ]]; then
+test=$(curl 10.0.0.91:2000/amit | grep $text)
+
+if [[ $test == *"$text"* ]]; then
   echo "Passed!"
 else
   echo "Failed!"
