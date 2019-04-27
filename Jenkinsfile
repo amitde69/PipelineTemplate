@@ -1,14 +1,12 @@
-import java.math.BigDecimal;
+
 
 node('myslave') {
   try {
     def image
-    double build = "${env.BUILD_NUMBER}" as double
+    def build = "${env.BUILD_NUMBER}" //as double
     //BigDecimal build = new BigDecimal.valueOf("${env.BUILD_NUMBER}")
-    //double ver = build * 0.001
-    BigDecimal ver = BigDecimal.valueOf(build * 0.001)
-    //double lastver = ver - 0.002
-    BigDecimal lastver = BigDecimal.valueOf(ver - 0.002)
+    def ver = build * 0.001
+    def lastver = ver - 0.002
     def version = "amitde7896/studentregister:" + ("${ver}")
     def lastversion = "amitde7896/studentregister:" + ("${lastver}")
     sh "echo ${lastversion}"
