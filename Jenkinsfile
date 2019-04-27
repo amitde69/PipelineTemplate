@@ -1,12 +1,10 @@
-
-
 node('myslave') {
   try {
     def image
-    def build = "${env.BUILD_NUMBER}" //as double
+    int build = "${env.BUILD_NUMBER}"
     //BigDecimal build = new BigDecimal.valueOf("${env.BUILD_NUMBER}")
-    def ver = build * 0.001
-    def lastver = ver - 0.002
+    int ver = build //* 0.001
+    int lastver = ver - 2 //0.002
     def version = "amitde7896/studentregister:" + ("${ver}")
     def lastversion = "amitde7896/studentregister:" + ("${lastver}")
     sh "echo ${lastversion}"
