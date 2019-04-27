@@ -99,7 +99,6 @@ spec:
           periodSeconds: 2
           successThreshold: 1"""
 
-
       writeFile file: 'amit.yaml', text: "${amit}"
       sh 'cat amit.yaml'
       kubernetesDeploy configs: 'amit.yaml', kubeConfig: [path: ''], kubeconfigId: 'kubeconfig', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
