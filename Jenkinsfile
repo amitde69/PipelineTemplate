@@ -5,8 +5,9 @@ node('myslave') {
     //BigDecimal build = new BigDecimal.valueOf("${env.BUILD_NUMBER}")
     int ver = build //* 0.001
     int lastver = ver - 2 //0.002
-    def version = "amitde7896/studentregister:" + ("${ver}")
-    def lastversion = "amitde7896/studentregister:" + ("${lastver}")
+    def app = "amitde7896/studentregister" + ":"
+    def version = "${app}" + ("${ver}")
+    def lastversion = "${app}" + ("${lastver}")
     sh "echo ${lastversion}"
     def cred = 'docker_hub'
 
