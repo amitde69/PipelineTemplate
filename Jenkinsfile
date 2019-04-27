@@ -90,7 +90,14 @@ spec:
       - name: amit
         image: ${version}
         ports:
-        - containerPort: 3000"""
+        - containerPort: 3000
+        readinessProbe:
+          httpGet:
+            path: /amit
+            port: 3000
+          initialDelaySeconds: 2
+          periodSeconds: 2
+          successThreshold: 1"""
 
 
       writeFile file: 'amit.yaml', text: "${amit}"
