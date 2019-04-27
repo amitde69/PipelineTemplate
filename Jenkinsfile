@@ -6,6 +6,7 @@ node('myslave') {
     float lastver = ver - 0.002
     def version = "amitde7896/studentregister:" + ("${ver}")
     def lastversion = "amitde7896/studentregister:" + ("${lastver}")
+    sh "echo ${lastversion}"
     def cred = 'docker_hub'
 
     stage("Checkout From Gitea") {
@@ -99,7 +100,9 @@ spec:
       echo "------------------------------------Stopping------------------------------------"
       testcont.stop()
       //echo "${version}"
-      sh "docker rmi ${lastversion}"
+      sh "echo ${lastversion}"
+
+      //sh "docker rmi ${lastversion}"
       //dockerimage.remove("amitde7896/studentregister:" + (${env.BUILD_NUMBER} - 1))
       //image.remove()
     }
