@@ -1,9 +1,9 @@
 node('myslave') {
   try {
     def image
-    float build = "${env.BUILD_NUMBER}" as float
-    float ver = build * 0.001
-    float lastver = ver - 0.002
+    double build = "${env.BUILD_NUMBER}" as double
+    double ver = build * 0.001
+    double lastver = ver - 0.002
     def version = "amitde7896/studentregister:" + ("${ver}")
     def lastversion = "amitde7896/studentregister:" + ("${lastver}")
     sh "echo ${lastversion}"
