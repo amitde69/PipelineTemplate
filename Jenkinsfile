@@ -102,7 +102,7 @@ spec:
       echo "------------------------------------Stopping------------------------------------"
       testcont.stop()
       //sh "echo ${lastversion}"
-      sh 'sudo bash test.sh'
+      sh 'sudo bash checkLastver.sh'
 
       //sh "docker rmi ${lastversion}"
       //dockerimage.remove("amitde7896/studentregister:" + (${env.BUILD_NUMBER} - 1))
