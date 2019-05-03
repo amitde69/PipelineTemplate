@@ -2,7 +2,7 @@ from flask import Flask,jsonify
 
 app = Flask(__name__)
 
-version = {'version': '3'}
+version = {'version': '4'}
 response = [
     version,
     {
